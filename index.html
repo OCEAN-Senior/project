@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bosh sahifa</title>
+</head>
+<body bgcolor="green">
+    <a href="{% url 'hello' %}">Teacher</a>
+    <a href="{% url 'students' %}">Students</a>
+
+
+    <table border="1px">
+        {% for i in teacher %}
+        <tr>
+            <td>{{i.IFSH}}</td>
+            <td><img src="{{i.rasm.url}}" height="200" width="200" alt="aaa"> </td>
+            <td>{{i.malumot}}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+    
+</body>
+</html>
