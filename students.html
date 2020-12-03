@@ -1,0 +1,27 @@
+{% load static %}
+{% static 'images' as img %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student tables</title>
+</head>
+<body>
+    <a href="{% url 'hello' %}">Teacher</a>
+    <a href="{% url 'students' %}">Students</a>
+    <table border="1px">
+        {% for i in students %}
+        <tr>
+            <td>{{i.ism}}</td>
+            <td>{{i.familya}}</td>
+            <td><img src="{{i.hujjat.url}}" alt=""></td>
+            <td><img src="{{i.rasm.url}}" alt=""></td>
+            <td>{{i.kelgan_sanasi}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>
